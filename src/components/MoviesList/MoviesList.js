@@ -20,7 +20,8 @@ class MoviesList extends Component {
         <div>{this.props.reduxState.movies.map((movie) => {
             return (<div key={movie.id}>
             {movie.title}
-            <img src = {movie.poster} alt={movie.description}/>
+            <img src = {movie.poster} alt={movie.description}
+            onClick={() => this.props.seeMovie(movie.id)}/>
             </div>)
         })}</div>
       </div>
