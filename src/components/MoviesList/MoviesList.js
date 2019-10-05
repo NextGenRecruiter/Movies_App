@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
+import './list.css';
 
 
 class MoviesList extends Component {
@@ -16,12 +17,12 @@ class MoviesList extends Component {
   // Renders the entire app on the DOM
   render() {
     return (
-      <div className="Movies">
-        <div>{this.props.reduxState.movies.map((movie) => {
-            return (<div key={movie.id}>
-            {movie.title}
-            <img src = {movie.poster} alt={movie.description}
-            onClick={() => this.props.seeMovie(movie.id)}/>
+      <div>
+        <div className="flex-container">{this.props.reduxState.movies.map((movie) => {
+            return (<div className="movieItem" key={movie.id}>
+                      {movie.title}<br/>
+                      <img src = {movie.poster} alt={movie.description}
+                      onClick={() => this.props.seeMovie(movie.id)}/>
             </div>)
         })}</div>
       </div>
