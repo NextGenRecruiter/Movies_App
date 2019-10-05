@@ -1,0 +1,7 @@
+.header{
+    background-image: url(image.jpg);
+    background-repeat: no-repeat;
+    height: 150px;
+    width: 100%;
+    padding: 20px;
+}
