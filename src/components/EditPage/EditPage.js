@@ -48,7 +48,7 @@ class Edit extends Component {
   }
 
   handleCancel = () =>{
-    this.props.history.push(`/movies/${this.props.match.params.id}`)    
+    this.props.history.push('/DetailsPage')    
   }
   render() {
     return (
@@ -67,6 +67,7 @@ class Edit extends Component {
         multiline
         rowsMax="4"
         onChange={(event) => this.handleChange(event, 'description')}
+        value={this.state.movie.description}
         margin="normal"
         variant="outlined"
       />
