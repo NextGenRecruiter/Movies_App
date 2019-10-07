@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import MoviesList from '../MoviesList/MoviesList'
-import Edit from '../EditPage/EditPage'
 
 class Movie extends Component {
   // Renders the entire app on the DOM
@@ -12,7 +11,6 @@ class Movie extends Component {
     return (
       <div className="App">
         <MoviesList seeMovie={this.seeMovie}/>
-        <Edit Edit={this.seeMovie}/>
       </div>
     );
   }

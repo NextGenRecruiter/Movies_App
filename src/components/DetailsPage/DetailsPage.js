@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-// import { withRouter, Router } from 'react-router-dom';
+import Button from '@material-ui/core/Button';
 
 
 
@@ -30,8 +30,8 @@ class DetailsPage extends Component {
                             <p>GENRE: {movie.genre_list}</p>
                         </div>
                     )}
-                    <button onClick={this.handleClick} >Back</button>
-                    <button onClick={this.Edit} >EDIT</button>
+                    <Button onClick={this.handleClick} >Back</Button>
+                    <Button onClick={this.Edit} >EDIT</Button>
                     </div>
                 </div>
         );

@@ -27,7 +27,7 @@ class Edit extends Component {
           description: movie.description
         }
       })
-      console.log('in movies ' ,movie);
+      console.log('in movies ', movie);
       
     })
   }
@@ -57,6 +57,7 @@ class Edit extends Component {
         id="outlined-uncontrolled"
         label="Title"
         onChange={(event) => this.handleChange(event, 'title')}
+        value={this.state.movie.title}
         margin="normal"
         variant="outlined"
       />
