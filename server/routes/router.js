@@ -42,7 +42,7 @@ router.put('/', (req, res) => {
     const queryValues = [
       updatedMovie.title,
       updatedMovie.description,
-      updatedMovie.id,
+      req.params.id,
     ];
     pool.query(queryText, queryValues).then(() => { 
         res.sendStatus(200); 
