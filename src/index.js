@@ -17,6 +17,8 @@ function* rootSaga() {
     yield takeEvery('GET_MOVIES', getMovies)
     yield takeEvery('GET_DETAIL', getDetails)
     yield takeEvery('UPDATE_MOVIES', updateMovies);
+    yield takeEvery('SINGLE_MOVIE', setSingleMovie);
+
 
 }
 function* getMovies(){
@@ -37,6 +39,16 @@ function* getDetails(action){
         console.log('error in GET detail generator function', error);  
     }
 }
+//create saga function for details
+function* setSingleMovie(action){
+    console.log(action.payload)
+    try{
+      const response = yield axios.get('/api/movies/details/'+ action.payload);
+      yield put({type: 'single_MOVIE', payload: response.data})
+    }catch(err){
+      console.log(err);
+    }
+  }
 function* updateMovies(action){
     try {
         yield axios.put('/api/movies', action.payload);
@@ -58,6 +70,14 @@ const movies = (state = [], action) => {
             return state;
     }
 }
+const singleMovies = (state=[], action)=>{
+    switch(action.type){
+      case 'SINGLE_MOVIE':
+        return action.payload
+      default:
+        return state
+    }
+  }
 
 // Used to store the movie genres
 const genres = (state = [], action) => {

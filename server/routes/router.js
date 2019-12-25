@@ -12,7 +12,7 @@ router.get('/', (req, res)=>{
         res.sendStatus(500);
     })
 })
-router.get('/:id', (req, res) =>{
+router.get('/details/:id', (req, res) =>{
     const queryGenre = `SELECT "movies".id, "movies".title, 
                                 "movies".poster, "movies".description, 
                                 string_agg("genres".name, ', ') AS genre_list FROM "movies"
